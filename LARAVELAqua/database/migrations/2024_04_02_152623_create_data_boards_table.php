@@ -15,13 +15,13 @@ class CreateDataBoardsTable extends Migration
     {
         Schema::create('data_boards', function (Blueprint $table) {
             $table->id();
-            $table->bigIncrements('id');
-            $table->foreign("board_id")->references("id")->on("boards");
+            $table->unsignedBigInteger('board_id');
             $table->float("ph_value");
             $table->float("temp_value");
             $table->float("level_value");
             $table->float("relay_value");
             $table->timestamps();
+            $table->foreign('board_id')->references('id')->on('boards');
         });
     }
 

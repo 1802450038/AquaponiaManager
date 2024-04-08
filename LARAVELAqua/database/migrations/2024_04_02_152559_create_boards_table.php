@@ -17,19 +17,20 @@ class CreateBoardsTable extends Migration
             $table->id();
             $table->string('api_key');
             $table->string('ssid_wifi');
-            $table->int('ph_max');
-            $table->int('ph_min');
+            $table->string('pass_wifi');
+            $table->integer('ph_max');
+            $table->integer('ph_min');
             $table->float('ph_calibration');
-            $table->int('temp_max');
-            $table->int('temp_min');
+            $table->integer('temp_max');
+            $table->integer('temp_min');
             $table->float('temp_calibration');
-            $table->int('level_max');
-            $table->int('level_min');
+            $table->integer('level_max');
+            $table->integer('level_min');
             $table->float('level_calibration');
             $table->String('relay_time_on');
             $table->String('relay_time_off');
             $table->boolean('relay_default_state');
-            $table->int('relay_ph_trigger');
+            $table->integer('relay_ph_trigger');
             $table->timestamps();
         });
     }
